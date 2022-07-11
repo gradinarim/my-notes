@@ -11,7 +11,7 @@ import java.util.List;
 public interface NoteRepository extends JpaRepository<Note, Long> {
 
     @Override
-    @Query("SELECT n FROM note n WHERE n.user.email = ?#{principal?.username}")
+    @Query("SELECT n FROM Note n WHERE n.user.email = ?#{principal?.username}")
     List<Note> findAll();
 
 }
